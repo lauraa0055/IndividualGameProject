@@ -13,11 +13,11 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] Text nameOfPlayer;
     [SerializeField] float waitForAudioClip = 0;
 
-
     // Start is called before the first frame update
     void Start()
     {
         score = PersistentData.Instance.GetScore();
+        PersistentData.Instance.SetScene(SceneManager.GetActiveScene().buildIndex);
         DisplayScore();
         DisplayName();
 
@@ -50,19 +50,6 @@ public class ScoreKeeper : MonoBehaviour
     public void DisplayName()
     {
         nameOfPlayer.text = PersistentData.Instance.GetName();
-    }
-
-    public void AdvanceScene()
-    {
-        if(SceneManager.GetActiveScene().buildIndex != 3)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            SceneManager.LoadScene("HighScoresScene");
-        }
-    }
-    
+    }    
 
 }

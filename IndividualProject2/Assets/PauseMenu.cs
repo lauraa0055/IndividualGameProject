@@ -58,4 +58,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("mainMenuScene");
     }
 
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("settingsScene");
+    }
+
 }

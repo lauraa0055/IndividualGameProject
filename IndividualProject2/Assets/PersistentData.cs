@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PersistentData : MonoBehaviour
 {
     [SerializeField] int playerScore;
     [SerializeField] string playerName;
+    [SerializeField] int currentScene;
 
     public static PersistentData Instance;
 
@@ -25,6 +27,7 @@ public class PersistentData : MonoBehaviour
     {
         playerName = "";
         playerScore = 0;
+        currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void SetName(string name)
@@ -45,6 +48,16 @@ public class PersistentData : MonoBehaviour
     public int GetScore()
     {
         return playerScore;
+    }
+
+    public void SetScene(int scene)
+    {
+        currentScene = scene;
+    }
+
+    public int GetScene()
+    {
+        return currentScene;
     }
 
     // Update is called once per frame

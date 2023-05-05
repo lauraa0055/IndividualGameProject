@@ -11,6 +11,9 @@ TagManager:
   - ShowInPlayMode
   - ShowInPauseMode
   - ShowAfterDestroyedBalloon
+  - ShowBeforeGameStart
+  - ShowAfterGameStart
+  - BackgroundMusic
   layers:
   - Default
   - TransparentFX

@@ -35,6 +35,8 @@ public class Balloon : MonoBehaviour
     [SerializeField] float seconds = 0;
 
     //audio
+    /*Sound Effect from: 
+     * <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=84862">Pixabay</a>*/
     [SerializeField] AudioSource audio;
 
     //keeping track of scenes to change speed
@@ -173,6 +175,7 @@ public class Balloon : MonoBehaviour
             Destroy(collision.gameObject);
 
             NextLevel.NextSceneScreen.GoToNextLevelScreen();
+            
 
         }
            
