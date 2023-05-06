@@ -17,6 +17,7 @@ TagManager:
   - ShowAfterGameStartAndPause
   - wallLeft
   - wallRight
+  - tutorial
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
 
         pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
         playMode = GameObject.FindGameObjectsWithTag("ShowInPlayMode");

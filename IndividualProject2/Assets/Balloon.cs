@@ -20,7 +20,7 @@ public class Balloon : MonoBehaviour
     GameObject controller;
 
     private Vector3 localScaleChange = new Vector3(+0.0001f, +0.0001f, 0f);
-    private const float afterTheseSecondsIncreaseBy = 5f;
+    private const float afterTheseSecondsIncreaseBy = 1f;
     private const float increaseByEverySecond = 15f;
     private const int timeOfInflate = 60;
 
