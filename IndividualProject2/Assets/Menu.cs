@@ -8,10 +8,27 @@ public class Menu : MonoBehaviour
 {
 
     [SerializeField] InputField playerNameInput;
+    GameObject backToGame;
+    GameObject menu;
 
     private void Start()
     {
        playerNameInput.text = PersistentData.Instance.GetName();
+
+       backToGame = GameObject.FindGameObjectWithTag("ShowAfterGameStart");
+       menu = GameObject.FindGameObjectWithTag("ShowBeforeGameStart");
+
+       if (PersistentData.Instance.GetScene() == 0)
+       {
+         menu.SetActive(true);
+         backToGame.SetActive(false);
+       }
+       else
+       {
+         menu.SetActive(false);
+         backToGame.SetActive(true);
+       }
+
     }
 
     //start game
@@ -22,6 +39,11 @@ public class Menu : MonoBehaviour
         PersistentData.Instance.SetName(playerName);
         SceneManager.LoadScene("scene1");
         //Debug.Log("pressed start game button");
+    }
+
+    public void LoadBackToGame()
+    {
+        SceneManager.LoadScene(PersistentData.Instance.GetScene());
     }
 
 

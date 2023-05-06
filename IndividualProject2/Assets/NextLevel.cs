@@ -8,12 +8,14 @@ public class NextLevel : MonoBehaviour
     GameObject[] nextLevelObjects;
     GameObject[] pauseMode;
     [SerializeField] GameObject[] playMode;
+    bool shown = false;
 
     public static NextLevel NextSceneScreen;
 
     // Start is called before the first frame update
     void Start()
     {
+        shown = true;
 
         if (NextSceneScreen == null)
             NextSceneScreen = this;
@@ -26,6 +28,11 @@ public class NextLevel : MonoBehaviour
         /**/foreach (GameObject g in nextLevelObjects)
             g.SetActive(false);/**/
 
+    }
+
+    public bool getShown()
+    {
+        return shown;
     }
 
     public void GoToNextLevelScreen()
@@ -59,6 +66,12 @@ public class NextLevel : MonoBehaviour
         foreach (GameObject g in nextLevelObjects)
             g.SetActive(false);
     }
+
+    /*public void LoadMenu()
+    {
+        //loads Menu/Start Scene
+        SceneManager.LoadScene("mainMenuScene");
+    }*/
 
     // Update is called once per frame
     void Update()
