@@ -37,6 +37,7 @@ public class Menu : MonoBehaviour
         //Debug.Log(playerNameInput.text);
         string playerName = playerNameInput.text;
         PersistentData.Instance.SetName(playerName);
+        PersistentData.Instance.SetScene(1);
         SceneManager.LoadScene("scene1");
         //Debug.Log("pressed start game button");
     }
