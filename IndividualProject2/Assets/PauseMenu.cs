@@ -6,15 +6,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    GameObject[] pauseMode;
-    GameObject[] playMode;
+    [SerializeField] GameObject[] pauseMode;
+    [SerializeField] GameObject playMode;
     // Start is called before the first frame update
     void Start()
     {
         //Time.timeScale = 1.0f;
 
         pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
-        playMode = GameObject.FindGameObjectsWithTag("ShowInPlayMode");
 
         //makes buttons to show in pause mode not show
         foreach (GameObject g in pauseMode)
@@ -36,8 +35,12 @@ public class PauseMenu : MonoBehaviour
         foreach (GameObject g in pauseMode)
             g.SetActive(true);
 
-        foreach (GameObject g in playMode)
-            g.SetActive(false);
+      
+            playMode.SetActive(false);
+
+            Debug.Log(playMode.activeSelf);
+       
+            
     }
 
     public void Resume()
@@ -48,8 +51,7 @@ public class PauseMenu : MonoBehaviour
         foreach (GameObject g in pauseMode)
             g.SetActive(false);
 
-        foreach (GameObject g in playMode)
-            g.SetActive(true);
+            playMode.SetActive(true);
     }
 
     public void LoadMenu()

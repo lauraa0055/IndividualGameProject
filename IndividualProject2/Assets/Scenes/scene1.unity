@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 895361478}
   m_Layer: 5
   m_Name: NameOfPlayer
-  m_TagString: ShowInPlayMode
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3151,6 +3151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02698ed336952b94b9a83c8ca5054617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMode: []
+  playMode: {fileID: 490703089}
 --- !u!1 &1878196163
 GameObject:
   m_ObjectHideFlags: 0

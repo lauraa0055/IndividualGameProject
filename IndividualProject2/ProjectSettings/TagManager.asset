@@ -8,7 +8,6 @@ TagManager:
   - Balloon_Target
   - Bullet
   - Obstacle
-  - ShowInPlayMode
   - ShowInPauseMode
   - ShowAfterDestroyedBalloon
   - ShowBeforeGameStart
@@ -18,6 +17,7 @@ TagManager:
   - wallLeft
   - wallRight
   - tutorial
+  - ShowInPlayMode
   layers:
   - Default
   - TransparentFX
