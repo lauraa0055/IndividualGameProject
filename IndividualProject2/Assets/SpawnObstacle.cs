@@ -16,6 +16,13 @@ public class SpawnObstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PersistentData.Instance.GetScene() == 2)
+        {
+            spawnTimeFirst = 1f;
+            spawnTimeSecond = 1f;
+        }
+           
+
         InvokeRepeating("SpawnSquareObstacle", spawnTimeFirst, spawnTimeSecond);
     }
 

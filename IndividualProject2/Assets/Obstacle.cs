@@ -31,6 +31,12 @@ public class Obstacle : MonoBehaviour
         moveLeft();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+            Destroy(collision.gameObject);
+    }
+
     private void moveLeft()
     {
         if(squareBody.position.x >= min_x)
