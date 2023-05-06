@@ -15,7 +15,8 @@ TagManager:
   - ShowAfterGameStart
   - BackgroundMusic
   - ShowAfterGameStartAndPause
-  - wall
+  - wallLeft
+  - wallRight
   layers:
   - Default
   - TransparentFX

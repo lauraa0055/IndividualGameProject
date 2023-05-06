@@ -107,7 +107,7 @@ public class User : MonoBehaviour
         //constraints the user
         //where I got information for constraints:
         //https://answers.unity.com/questions/994941/how-do-i-stop-the-player-from-moving-offscreen.html
-        if (collision.gameObject.tag == "wall")
+        if (collision.gameObject.tag == "wallLeft" || collision.gameObject.tag == "wallRight")
         {
             transform.position = transform.position;
         }

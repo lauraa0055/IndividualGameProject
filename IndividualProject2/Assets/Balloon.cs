@@ -123,7 +123,7 @@ public class Balloon : MonoBehaviour
     {
         //controller.GetComponent<ScoreKeeper>().AddPoints();
 
-        if (collision.gameObject.tag == "wall")
+        if (collision.gameObject.tag == "wallLeft" || collision.gameObject.tag == "wallRight")
         {
             isFacingRight = !isFacingRight;
             constantMovement = constantMovement * -1;

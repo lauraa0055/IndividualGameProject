@@ -17,6 +17,11 @@ public class Obstacle : MonoBehaviour
         if(squareBody == null)
             squareBody = GetComponent<Rigidbody2D>();
 
+        if (PersistentData.Instance.GetScene() == 2)
+            squareBody.transform.localScale = new Vector2(5, 5);
+        else
+            squareBody.transform.localScale = new Vector2(1, 1);
+
         horizontalMovement = squareBody.position.x;
     }
 
@@ -35,19 +40,15 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
             Destroy(collision.gameObject);
+
+        if (collision.gameObject.tag == "wallLeft")
+            Destroy(gameObject);
     }
 
     private void moveLeft()
     {
-        if(squareBody.position.x >= min_x)
-        {
-            horizontalMovement -= constantMovement;
-            squareBody.position = new Vector2(horizontalMovement * SPEED, squareBody.position.y);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        horizontalMovement -= constantMovement;
+        squareBody.position = new Vector2(horizontalMovement * SPEED, squareBody.position.y);
     }
 
 }

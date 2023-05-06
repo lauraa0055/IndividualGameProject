@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 322867135}
   m_Layer: 0
   m_Name: RightInvsiblewall
-  m_TagString: wall
+  m_TagString: wallRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1954,7 +1954,7 @@ GameObject:
   - component: {fileID: 1617378285}
   m_Layer: 0
   m_Name: LeftInvisiblewall
-  m_TagString: wall
+  m_TagString: wallLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
