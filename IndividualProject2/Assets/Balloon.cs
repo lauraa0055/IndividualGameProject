@@ -89,45 +89,22 @@ public class Balloon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isFacingRight)
-            moveRight();
-
-        if (!isFacingRight)
-            moveLeft();
-
+        move();
+;
         InvokeRepeating("InflateBalloon", afterTheseSecondsIncreaseBy, increaseByEverySecond);
         //Debug.Log("X: " + transform.localScale.x + " | Y: " + transform.localScale.y + " | Seconds" + seconds);
     }
 
-    private void moveRight()
+    private void move()
     {
-        if (balloonBody.position.x <= max_x)
-        {
-            horizontalMovement += constantMovement;
-            balloonBody.position = new Vector2(horizontalMovement * SPEED, ballonPositionY);
-            //Debug.Log(balloonBody.position.x + " Y: " + balloonBody.position.y);
-            //InflateBalloon();
-        }
-        else
-        {
-            isFacingRight = !isFacingRight;
-        }
+        horizontalMovement += constantMovement;
+        balloonBody.position = new Vector2(horizontalMovement * SPEED, ballonPositionY);
     }
 
-    private void moveLeft()
+    /*private void moveLeft()
     {
-        if (balloonBody.position.x >= max_x || !isFacingRight && balloonBody.position.x >= min_x)
-        {
-            horizontalMovement -= constantMovement;
-            balloonBody.position = new Vector2(horizontalMovement * SPEED, ballonPositionY);
-            //Debug.Log(balloonBody.position.x + " Y: " + balloonBody.position.y);
-            //InflateBalloon();
-        }
-        else
-        {
-            isFacingRight = !isFacingRight;
-        }
-    }
+        horizontalMovement += constantMovement;
+    }*/
 
     private void InflateBalloon()
     {
@@ -146,7 +123,13 @@ public class Balloon : MonoBehaviour
     {
         //controller.GetComponent<ScoreKeeper>().AddPoints();
 
-        if(collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "wall")
+        {
+            isFacingRight = !isFacingRight;
+            constantMovement = constantMovement * -1;
+        }
+
+        if (collision.gameObject.tag == "Bullet")
         {
 
             //593 = medium

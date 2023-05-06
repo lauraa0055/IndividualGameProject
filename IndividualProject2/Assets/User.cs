@@ -66,22 +66,6 @@ public class User : MonoBehaviour
         //actually move the user
         user.velocity = new Vector2(SPEED * movementHorizontal, user.velocity.y);
 
-        //constraints the user
-        //where I got information for constraints:
-        //https://answers.unity.com/questions/994941/how-do-i-stop-the-player-from-moving-offscreen.html
-        if (transform.position.x >= max_x)
-        {
-            Vector3 pos = transform.position;
-            pos.x = max_x;
-            transform.position = pos;
-        }else if(transform.position.x <= min_x)
-        {
-            Vector3 pos = transform.position;
-            pos.x = min_x;
-            transform.position = pos;
-
-        }
-
         if (movementHorizontal < 0 && isFacingRight || movementHorizontal > 0 && !isFacingRight)
             Flip();
 
@@ -119,6 +103,15 @@ public class User : MonoBehaviour
             isGrounded = true;
         
         animator.SetBool("isJumping", false);
+
+        //constraints the user
+        //where I got information for constraints:
+        //https://answers.unity.com/questions/994941/how-do-i-stop-the-player-from-moving-offscreen.html
+        if (collision.gameObject.tag == "wall")
+        {
+            transform.position = transform.position;
+        }
+
 
         if (collision.gameObject.tag == "Obstacle")
         {
