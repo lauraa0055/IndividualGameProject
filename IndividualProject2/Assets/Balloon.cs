@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Balloon : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class Balloon : MonoBehaviour
     //const int popBalloon = 1299;
     const int popBalloon = 30;
     [SerializeField] float seconds = 0;
+
+    [SerializeField] Text time;
 
     //audio
     /*Sound Effect from: 
@@ -111,12 +114,19 @@ public class Balloon : MonoBehaviour
         transform.localScale += localScaleChange;
         seconds += Time.deltaTime;
 
+        UpdateTime(seconds);
+
         if (seconds > popBalloon)
         {
             Destroy(gameObject);
             SceneManager.LoadScene(scene);
         }
             
+    }
+
+    private void UpdateTime(float seconds)
+    {
+        time.text = "Time Passed: " + seconds;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
