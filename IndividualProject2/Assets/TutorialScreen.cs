@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TutorialScreen : MonoBehaviour
 {
-
-    GameObject[] pauseMode;
     GameObject[] playMode;
     GameObject[] tutorial;
     GameObject[] nextLevelObjects;
@@ -15,8 +13,6 @@ public class TutorialScreen : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0.0f;
-
-        pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
         playMode = GameObject.FindGameObjectsWithTag("ShowInPlayMode");
         nextLevelObjects = GameObject.FindGameObjectsWithTag("ShowAfterDestroyedBalloon");
         tutorial = GameObject.FindGameObjectsWithTag("tutorial");
@@ -26,9 +22,6 @@ public class TutorialScreen : MonoBehaviour
 
         player.SetActive(false);
         balloon.SetActive(false);
-
-        foreach (GameObject g in pauseMode)
-            g.SetActive(false);
 
         foreach (GameObject g in playMode)
             g.SetActive(false);
