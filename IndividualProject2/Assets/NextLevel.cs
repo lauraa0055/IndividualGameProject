@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
     GameObject[] nextLevelObjects;
     GameObject[] pauseMode;
     [SerializeField] GameObject[] playMode;
-    bool shown = false;
+
+    [SerializeField] Text score;
 
     public static NextLevel NextSceneScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        shown = true;
 
         if (NextSceneScreen == null)
             NextSceneScreen = this;
@@ -28,11 +29,6 @@ public class NextLevel : MonoBehaviour
         /**/foreach (GameObject g in nextLevelObjects)
             g.SetActive(false);/**/
 
-    }
-
-    public bool getShown()
-    {
-        return shown;
     }
 
     public void GoToNextLevelScreen()
@@ -48,6 +44,7 @@ public class NextLevel : MonoBehaviour
         foreach (GameObject g in nextLevelObjects)
             g.SetActive(true);
 
+        score.text = "Score: " + (PersistentData.Instance.GetScore()).ToString();
 
     }
 

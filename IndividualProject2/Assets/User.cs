@@ -25,6 +25,9 @@ public class User : MonoBehaviour
     //when hit by square
     int scene;
 
+    //animator
+    public Animator animator;
+
 
 
     // Start is called before the first frame update
@@ -43,6 +46,7 @@ public class User : MonoBehaviour
     {
         //Check input from user to move left or right
         movementHorizontal = Input.GetAxis("Horizontal");
+        animator.SetFloat("SPEED", Mathf.Abs(movementHorizontal));
 
         //uses the spacebar to jump
         if (Input.GetKey(KeyCode.UpArrow))
@@ -96,6 +100,7 @@ public class User : MonoBehaviour
 
     private void Jump()
     {
+        animator.SetBool("isJumping", true);
         user.velocity = new Vector2(user.velocity.x, 0);
         user.AddForce(new Vector2(0, jumpForce));
         //Debug.Log("jumped");
@@ -112,8 +117,10 @@ public class User : MonoBehaviour
         //Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "ForegroundGround")
             isGrounded = true;
+        
+        animator.SetBool("isJumping", false);
 
-        if(collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             SceneManager.LoadScene(scene);
         }
