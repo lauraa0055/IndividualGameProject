@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
        backToGame = GameObject.FindGameObjectWithTag("ShowAfterGameStart");
        menu = GameObject.FindGameObjectWithTag("ShowBeforeGameStart");
 
-       if (PersistentData.Instance.GetScene() == 0)
+       if (PersistentData.Instance.GetScene() == 0 || (PersistentData.Instance.GetScene() == 3 && PersistentData.Instance.getFinishedScene3()))
        {
          menu.SetActive(true);
          backToGame.SetActive(false);

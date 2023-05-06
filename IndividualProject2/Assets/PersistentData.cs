@@ -8,6 +8,7 @@ public class PersistentData : MonoBehaviour
     [SerializeField] int playerScore;
     [SerializeField] string playerName;
     [SerializeField] int currentScene;
+    bool finishedScene3 = false;
 
     public static PersistentData Instance;
 
@@ -38,6 +39,8 @@ public class PersistentData : MonoBehaviour
     public void SetScore(int score)
     {
         playerScore = score;
+        if (currentScene == 3)
+            finishedScene3 = true;
     }
 
     public string GetName()
@@ -58,6 +61,11 @@ public class PersistentData : MonoBehaviour
     public int GetScene()
     {
         return currentScene;
+    }
+
+    public bool getFinishedScene3()
+    {
+        return finishedScene3;
     }
 
     // Update is called once per frame
