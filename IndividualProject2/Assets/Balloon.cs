@@ -33,7 +33,7 @@ public class Balloon : MonoBehaviour
     const int largeBalloonPoints = 3;
     //const int popBalloon = 1299;
     const int popBalloon = 30;
-    [SerializeField] float seconds = 0;
+    [SerializeField] float seconds;
 
     [SerializeField] Text time;
 
@@ -54,6 +54,8 @@ public class Balloon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        seconds = 0;
+
         if (balloonBody == null)
             balloonBody = GetComponent<Rigidbody2D>();
 
