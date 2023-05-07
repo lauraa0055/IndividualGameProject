@@ -77,7 +77,7 @@ public class Balloon : MonoBehaviour
         
         if(scene == sceneThree)
         {
-            SPEED = 5.5f;
+            SPEED = 15f;
         }
 
         if(audio == null)

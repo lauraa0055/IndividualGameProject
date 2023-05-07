@@ -21,6 +21,10 @@ public class SpawnObstacle : MonoBehaviour
             spawnTimeFirst = 1f;
             spawnTimeSecond = 1f;
         }
+        if(PersistentData.Instance.GetScene() == 3)
+        {
+            spawnTimeSecond = 1f;
+        }
            
 
         InvokeRepeating("SpawnSquareObstacle", spawnTimeFirst, spawnTimeSecond);

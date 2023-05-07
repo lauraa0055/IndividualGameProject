@@ -48,6 +48,9 @@ public class Obstacle : MonoBehaviour
     private void moveLeft()
     {
         horizontalMovement -= constantMovement;
+        if (PersistentData.Instance.GetScene() == 3)
+            SPEED = 7f;
+
         squareBody.position = new Vector2(horizontalMovement * SPEED, squareBody.position.y);
     }
 
