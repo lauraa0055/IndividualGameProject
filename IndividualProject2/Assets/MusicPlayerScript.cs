@@ -16,6 +16,9 @@ public class MusicPlayerScript : MonoBehaviour
      between scenes
     https://youtu.be/Xtfe5S9n4SI*/
 
+    /*where I got the music from:
+     Music by <a href="https://pixabay.com/users/coma-media-24399569/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=12099">Coma-Media</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=12099">Pixabay</a>*/
+
     public Slider volumeSlider;
     public GameObject ObjectMusic;
 
